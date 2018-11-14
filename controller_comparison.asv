@@ -79,10 +79,9 @@ subplot(4,1,4)
 hold on
 plot(times, d_rel_nn,'r')
 plot(times, d_rel, 'b')
-safe_distance = D_default + t_gap*v_ego_nn;
-plot(times, safe_distance, '-.k')
+safe_distance = 
 title('Relative distance vs. safe distance')
-legend('NN contoller', 'MPC controller', 'Safe distance')
+legend('NN contoller', 'MPC controller')
 grid on
 hold off
 
