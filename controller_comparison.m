@@ -3,7 +3,7 @@ mdl = 'test_mpcACCsystem';
 open_system(mdl)
 
 %Define the sample time, Ts, and simulation duration, T, in seconds.
-Ts = 0.1;
+% Ts = 0.1;
 T = 400;
 seed = randi([1001,2000]);
 %Specify the linear model for ego car.
@@ -39,7 +39,7 @@ a_ego = logsout.get(1).Values.Data; % output1
 a_lead = logsout.get(6).Values.Data;
 
 %% Run the simulation with NN controller .
-sim('test_nncACCsystem')
+sim('test_RnnACCsystem')
 times = logsout.get(1).Values.Time;
 v_ego_nn = logsout.get(1).Values.Data; % input3
 d_rel_nn = logsout.get(5).Values.Data; % input4
