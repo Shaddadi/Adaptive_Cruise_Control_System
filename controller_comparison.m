@@ -1,10 +1,11 @@
+clc
+clear
 close all
-mdl = 'test_mpcACCsystem';
-open_system(mdl)
 
 %Define the sample time, Ts, and simulation duration, T, in seconds.
 % Ts = 0.1;
 T = 400;
+Ts = 0.1;
 seed = randi([1001,2000]);
 %Specify the linear model for ego car.
 G_ego = tf(1,[0.5,1,0]);
@@ -25,6 +26,9 @@ v_set = 30;
 %The acceleration is constrained to the range [-3,2] (m/s^2).
 amin_ego = -3;
 amax_ego = 2;
+
+mdl = 'test_mpcACCsystem';
+open_system(mdl)
 
 %% Run the simulation with actual controller .
 sim(mdl)
